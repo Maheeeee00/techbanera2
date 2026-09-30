@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>POS Systems | Tech Banara</title>
+<meta name="description" content="POS software and hardware for retail shops, restaurants, pharmacies and wholesale.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="header" id="header">
+  <nav class="wrap nav" aria-label="Main">
+    <a href="index.html" class="logo"><span class="logo-mark">TB</span>Tech Banara</a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Open menu">
+    <label for="nav-toggle" class="nav-burger" aria-hidden="true"><span></span><span></span><span></span></label>
+    <ul class="nav-links">
+      <li><a href="index.html" data-page="index">Home</a></li>
+      <li><a href="services.html" data-page="services">Services</a></li>
+      <li><a href="pos.html" data-page="pos" class="active" aria-current="page">POS</a></li>
+      <li><a href="seo-ads.html" data-page="seo-ads">SEO &amp; Ads</a></li>
+      <li><a href="pricing.html" data-page="pricing">Pricing</a></li>
+      <li><a href="contact.html" data-page="contact">Contact</a></li>
+    </ul>
+    <a href="contact.html" class="btn btn-hot nav-cta">Get a quote <span class="arrow">→</span></a>
+  </nav>
+</header>
+
+<main id="top">
+  <section class="page-hero">
+    <div class="hero-bg" aria-hidden="true">
+      <div class="blob blob-1"></div><div class="blob blob-2"></div><div class="blob blob-3"></div>
+      <div class="grid-bg"></div>
+    </div>
+    <div class="wrap page-hero-in">
+      <div class="crumbs"><a href="index.html">Home</a><span>/</span><b>POS Systems</b></div>
+      <span class="eyebrow">Point of sale</span>
+      <h1>POS software that <span class="grad-text">never stops selling</span></h1>
+      <p>Billing, stock, staff and reports for shops, restaurants and pharmacies. Works offline and syncs with your online store.</p>
+      <div class="hero-actions"><a href="contact.html" class="btn btn-hot">Get a free quote <span class="arrow">→</span></a><a href="pricing.html" class="btn btn-glass">See pricing</a></div>
+    </div>
+  </section>
+
+  <!-- ================= POS ================= -->
+  <section class="section pos" id="pos">
+    <div class="wrap pos-grid">
+      <div class="pos-copy reveal-l">
+        <span class="eyebrow">POS solutions</span>
+        <h2>A point-of-sale built for <span class="grad-text">your counter</span></h2>
+        <p>Works offline, syncs when online, prints receipts in seconds and keeps stock matched with your website.</p>
+        <div class="pos-types">
+          <div class="pos-type"><span class="dot-ic">R</span><div><h3>Retail &amp; Grocery</h3><p>Barcode billing, discounts, loyalty points and supplier orders.</p></div></div>
+          <div class="pos-type"><span class="dot-ic">F</span><div><h3>Restaurants &amp; Cafés</h3><p>Table orders, kitchen tickets, takeaway and delivery on one screen.</p></div></div>
+          <div class="pos-type"><span class="dot-ic">P</span><div><h3>Pharmacy &amp; Wholesale</h3><p>Batch and expiry tracking, credit ledgers and branch transfers.</p></div></div>
+        </div>
+        <div class="pos-feats"><span>Sales reports</span><span>Staff roles</span><span>Low-stock alerts</span><span>Cloud backup</span><span>On-site training</span></div>
+      </div>
+
+      <div class="terminal reveal-r" aria-label="POS terminal demo">
+        <div class="screen">
+          <div class="screen-in">
+            <div class="screen-top"><span>Till 02 · Cashier: Sara</span><b>● Online</b></div>
+            <div class="cart-item"><span>Basmati Rice 5kg</span><span>Rs 2,400</span></div>
+            <div class="cart-item"><span>Cooking Oil 3L</span><span>Rs 1,950</span></div>
+            <div class="cart-item"><span>Green Tea ×2</span><span>Rs 500</span></div>
+            <div class="total"><span class="mini-label">Total</span><strong>Rs 4,850</strong></div>
+            <div class="pay-btn">Pay by card</div>
+          </div>
+        </div>
+        <div class="printer"></div>
+        <div class="paper" aria-hidden="true">
+          <div class="c">YOUR STORE</div>
+          <div class="c" style="font-weight:400">Receipt #10482</div>
+          <hr>
+          <div class="r"><span>Basmati Rice</span><span>2,400</span></div>
+          <div class="r"><span>Cooking Oil</span><span>1,950</span></div>
+          <div class="r"><span>Green Tea ×2</span><span>500</span></div>
+          <hr>
+          <div class="r"><b>TOTAL</b><b>4,850</b></div>
+          <div class="c" style="font-weight:400">Thank you!</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= HARDWARE ================= -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow cool">Hardware</span>
+        <h2>We supply and install the <span class="grad-text">full counter setup</span></h2>
+        <p>Software, devices and training delivered together, so your till is ready on day one.</p>
+      </div>
+      <div class="hw-grid">
+        <article class="svc c-hot reveal"><div class="svc-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></div><h3>Touchscreen Terminal</h3><p>15.6" all-in-one POS with fast SSD storage.</p></article>
+        <article class="svc c-amber reveal"><div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M6 9V3h12v6M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="7"/></svg></div><h3>Thermal Printer</h3><p>80mm receipt and kitchen ticket printing.</p></article>
+        <article class="svc c-teal reveal"><div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M3 5v14M7 5v14M11 5v14M14 5v14M18 5v14M21 5v14"/></svg></div><h3>Barcode Scanner</h3><p>1D/2D scanners for fast checkout and stock counts.</p></article>
+        <article class="svc c-sky reveal"><div class="svc-icon"><svg viewBox="0 0 24 24"><rect x="2" y="10" width="20" height="10" rx="2"/><path d="M6 10V6h12v4M9 15h6"/></svg></div><h3>Cash Drawer</h3><p>Opens automatically when a cash sale completes.</p></article>
+        <article class="svc c-pink reveal"><div class="svc-icon"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="11" rx="2"/><path d="M9 19h6M12 15v4"/></svg></div><h3>Customer Display</h3><p>Shows items and totals to the customer.</p></article>
+        <article class="svc c-lime reveal"><div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg></div><h3>Label Printer</h3><p>Price and barcode labels for your shelves.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CTA ================= -->
+  <section class="wrap" style="padding-bottom:110px">
+    <div class="cta reveal">
+      <div class="cta-shape" aria-hidden="true"></div><div class="cta-shape s2" aria-hidden="true"></div>
+      <h2>Ready to take your business online?</h2>
+      <p>Book a free 30-minute call. We'll review your current setup and show you exactly where to grow.</p>
+      <a href="contact.html" class="btn">Book a free call <span class="arrow">→</span></a>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo"><span class="logo-mark">TB</span>Tech Banara</a>
+        <p>Websites, software, POS, SEO and ads for growing businesses. One team, one invoice.</p>
+      </div>
+      <div><h4>Build</h4><ul><li><a href="services.html">Websites</a></li><li><a href="services.html">E-commerce</a></li><li><a href="services.html">Custom software</a></li><li><a href="pos.html">POS systems</a></li></ul></div>
+      <div><h4>Grow</h4><ul><li><a href="seo-ads.html">SEO</a></li><li><a href="seo-ads.html">Ads setup</a></li><li><a href="seo-ads.html">Campaigns</a></li><li><a href="services.html">Maintenance</a></li></ul></div>
+      <div><h4>Company</h4><ul><li><a href="index.html#process">Process</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="pricing.html#faq">FAQ</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    </div>
+    <div class="wordmark" aria-hidden="true">TECH BANARA</div>
+    <div class="footer-bottom"><span>© <span id="year">2026</span> Tech Banara. All rights reserved.</span><span>Built with HTML &amp; CSS</span></div>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
