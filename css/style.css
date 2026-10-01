@@ -28,7 +28,7 @@
 @property --angle { syntax: "<angle>"; initial-value: 0deg; inherits: false; }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; interpolate-size: allow-keywords; }
+html { scroll-behavior: smooth; interpolate-size: allow-keywords; overflow-x: clip; }
 body {
   margin: 0;
   background: var(--bg);
@@ -141,9 +141,14 @@ p { margin: 0; }
 .pill .ping::after { content: ""; position: absolute; inset: 0; border-radius: 50%; background: var(--teal); animation: ping 1.8s infinite; }
 @keyframes ping { to { transform: scale(2.8); opacity: 0; } }
 .hero h1 { font-size: clamp(2.7rem, 6.4vw, 5.2rem); font-weight: 800; }
-.rotator { display: block; height: 1.1em; overflow: hidden; }
-.rotator-list { display: block; animation: rotate-words 12.5s var(--ease) infinite; }
-.rotator-list span { display: block; height: 1.1em; }
+.hero-copy { container-type: inline-size; }
+.rotator {
+  display: block; overflow: hidden; white-space: nowrap;
+  height: 1.2em; line-height: 1.2em; padding-right: .05em;
+  font-size: min(1em, 7.9cqi);
+}
+.rotator-list { display: block; animation: rotate-words 12.5s var(--ease) infinite; will-change: transform; }
+.rotator-list span { display: block; height: 1.2em; line-height: 1.2em; white-space: nowrap; }
 .rotator-list span:nth-child(1) { color: var(--coral); }
 .rotator-list span:nth-child(2) { color: var(--amber); }
 .rotator-list span:nth-child(3) { color: var(--teal); }
@@ -152,11 +157,11 @@ p { margin: 0; }
 .rotator-list span:nth-child(6) { color: var(--coral); }
 @keyframes rotate-words {
   0%, 16% { transform: translateY(0); }
-  20%, 36% { transform: translateY(-1.1em); }
-  40%, 56% { transform: translateY(-2.2em); }
-  60%, 76% { transform: translateY(-3.3em); }
-  80%, 96% { transform: translateY(-4.4em); }
-  100% { transform: translateY(-5.5em); }
+  20%, 36% { transform: translateY(-1.2em); }
+  40%, 56% { transform: translateY(-2.4em); }
+  60%, 76% { transform: translateY(-3.6em); }
+  80%, 96% { transform: translateY(-4.8em); }
+  100% { transform: translateY(-6em); }
 }
 .hero-lead { font-size: 1.15rem; color: var(--muted); max-width: 540px; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; }
@@ -232,7 +237,7 @@ p { margin: 0; }
 
 /* ---------- Marquee ---------- */
 .marquee {
-  overflow: hidden; background: var(--grad-hot); color: #1a0d05;
+  overflow: hidden; max-width: 100vw; background: var(--grad-hot); color: #1a0d05;
   transform: rotate(-2deg); margin-block: -10px; position: relative; z-index: 2;
   border-block: 3px solid var(--bg);
 }
@@ -516,7 +521,7 @@ p { margin: 0; }
 .footer ul a:hover { color: var(--amber); padding-left: 6px; }
 .footer-brand p { color: var(--muted); font-size: 14.5px; margin-top: 16px; max-width: 300px; }
 .wordmark {
-  margin-top: 56px; font: 800 clamp(2.6rem, 11.5vw, 10rem)/.9 var(--font-display); letter-spacing: -.04em; text-align: center;
+  margin-top: 56px; font: 800 clamp(1.6rem, 7vw, 6.4rem)/1 var(--font-display); white-space: nowrap; letter-spacing: -.04em; text-align: center;
   color: transparent; background: var(--grad-all); background-size: 200% auto;
   -webkit-background-clip: text; background-clip: text; opacity: .9;
   animation: flow 8s linear infinite; user-select: none;
@@ -531,8 +536,12 @@ p { margin: 0; }
   .chart .line { animation: draw linear both; animation-timeline: view(); animation-range: entry 10% cover 45%; }
 }
 @keyframes reveal { from { opacity: .15; transform: translateY(60px) scale(.96); } }
-@keyframes reveal-l { from { opacity: .15; transform: translateX(-70px); } }
-@keyframes reveal-r { from { opacity: .15; transform: translateX(70px); } }
+@keyframes reveal-l { from { opacity: .15; transform: translateX(-50px); } }
+@keyframes reveal-r { from { opacity: .15; transform: translateX(50px); } }
+/* On narrow screens, slide up instead of sideways so nothing pokes past the screen edge */
+@media (max-width: 900px) {
+  .reveal-l, .reveal-r { animation-name: reveal; }
+}
 @keyframes draw { from { stroke-dashoffset: 900; } }
 
 /* ---------- Responsive ---------- */
@@ -573,6 +582,10 @@ p { margin: 0; }
   .form, .plan, .panel { padding: 24px; }
   .kw { grid-template-columns: 1fr auto; }
   .kw .was { display: none; }
+  .hero-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+  .stat { min-width: 0; padding: 12px; }
+  .stat strong { font-size: 1.35rem; }
+  .stat span { font-size: 11.5px; line-height: 1.35; }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
