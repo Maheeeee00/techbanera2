@@ -50,6 +50,31 @@
     form.reset();
   });
 
+  // Keep the rotating headline words on one line: shrink them if the longest word is too wide
+  var rot = document.querySelector('.rotator');
+  function fitRotator() {
+    if (!rot) return;
+    rot.style.fontSize = '';
+    var widest = 0;
+    var range = document.createRange();
+    rot.querySelectorAll('.rotator-list span').forEach(function (s) {
+      range.selectNodeContents(s);
+      widest = Math.max(widest, range.getBoundingClientRect().width);
+    });
+    var room = rot.parentElement.clientWidth;
+    if (widest > room) {
+      var size = parseFloat(getComputedStyle(rot).fontSize);
+      rot.style.fontSize = Math.floor(size * room / widest * 0.98) + 'px';
+    }
+  }
+  fitRotator();
+  if (document.fonts) {
+    document.fonts.ready.then(fitRotator);
+    document.fonts.addEventListener && document.fonts.addEventListener('loadingdone', fitRotator);
+  }
+  window.addEventListener('load', fitRotator);
+  window.addEventListener('resize', fitRotator);
+
   var year = document.getElementById('year');
   if (year) year.textContent = new Date().getFullYear();
 })();
